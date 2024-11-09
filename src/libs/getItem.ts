@@ -10,10 +10,14 @@ export const getItem = async (api: string) => {
       message: 200,
       result: resData,
     };
-  } catch (error: unknown) {
-    return {
-      message: 400,
-      result: error.message,
-    };
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      return {
+        message: 400,
+        result: e.message,
+      };
+    } else {
+      return { message: 400, result: "不明なエラー" };
+    }
   }
 };
