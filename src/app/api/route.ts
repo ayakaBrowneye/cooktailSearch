@@ -89,7 +89,11 @@ export async function GET(req: NextRequest) {
     });
 
     return Response.json({ message: 200, result: data });
-  } catch (e) {
-    return Response.json({ message: 400, result: e.message });
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      return Response.json({ message: 400, result: e.message });
+    } else {
+      return Response.json({ message: 400, result: "不明なエラー" });
+    }
   }
 }

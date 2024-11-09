@@ -49,8 +49,6 @@ export function SearchList(props: props) {
     tag: props.input.tag,
   });
 
-  console.log("search to route param" + param.toString());
-
   const { data, error, isLoading } = useSWR<getData>(
     "/api?" + param.toString(),
     fetcher
@@ -63,7 +61,6 @@ export function SearchList(props: props) {
       <div className="w-2/5 mx-auto text-center">Data acquisition failed.</div>
     );
   if (data) {
-    console.log(data);
     if (data.message === 200 && data.result.length !== 0) {
       return (
         <ul className="space-y-1 mx-auto w-9/12">
