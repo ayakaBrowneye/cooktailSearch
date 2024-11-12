@@ -17,9 +17,9 @@ export default function Home() {
             <Link href="/CocktailsSearch">
               <div
                 className="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
-                // style={{
-                //   backgroundImage: "url('/img/cocktail.jpg')",
-                // }}
+                style={{
+                  backgroundImage: "url('/image/topImage_left.png')",
+                }}
               >
                 <div className="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
                   <h2 className="mt-4 text-xl font-semibold text-white capitalize">
@@ -34,9 +34,9 @@ export default function Home() {
             {/* <Link href="/CocktailsIdSearch"> */}
             <div
               className="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
-              // style={{
-              //   backgroundImage: "url('/img/cocktail.jpg')",
-              // }}
+              style={{
+                backgroundImage: "url('/image/topImage_right.png')",
+              }}
             >
               <div className="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
                 <h2 className="mt-4 text-xl font-semibold text-white capitalize">
