@@ -1,3 +1,52 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  // 環境指定
+  "env": {
+    "browser": true,
+    // ES2021までに導入されたグローバル変数が認識させる
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  // コードがtypescriptとして解析されるように指定する
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    // 最新のECMAScriptの構文
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "pathGroups": [
+          {
+            "pattern": "react**",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"]
+      }
+    ]
+  }
 }
